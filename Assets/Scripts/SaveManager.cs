@@ -3,7 +3,7 @@ using System.IO;
 
 public static class SaveManager
 {
-    private static string filepath = Application.streamingAssetsPath + "/saves/";
+    private static string filepath = Application.persistentDataPath + "/saves/";
     // Start is called before the first frame update
     public static void Save(DataStruct data)
     {
@@ -33,3 +33,20 @@ public static class SaveManager
         return new DataStruct();
     }
 }
+
+
+public static class FirstRunApp
+{
+    public static void SetUp()
+    {
+        string filepath = Application.persistentDataPath + "/saves/";
+        if (!Directory.Exists(filepath))
+        {
+            DirectoryInfo savedir = Directory.CreateDirectory(filepath);
+            File.Create(filepath + "save.json");
+            SaveManager.Save(SaveManager.Defaults());
+        }
+        return;
+    }
+}
+
