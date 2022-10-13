@@ -43,7 +43,8 @@ public static class FirstRunApp
         if (!Directory.Exists(filepath))
         {
             DirectoryInfo savedir = Directory.CreateDirectory(filepath);
-            File.Create(filepath + "save.json");
+            FileStream tmp = File.Create(filepath + "save.json");
+            tmp.Close();
             SaveManager.Save(SaveManager.Defaults());
         }
         return;
