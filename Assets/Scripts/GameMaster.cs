@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameMaster : MonoBehaviour
@@ -10,7 +8,7 @@ public class GameMaster : MonoBehaviour
     private void Start()
     {
         eventManager = GetComponent<EventManager>();
-        balance = new DataStruct();
+        balance = SaveManager.Load();
         EventList.SetUp();
         eventManager.SetUp();
     }
@@ -26,6 +24,7 @@ public class GameMaster : MonoBehaviour
             balance.count /= balance.rublesInDollar;
         }
         balance.isDollar = !balance.isDollar;
+        SaveManager.Save(balance);
     }
 
 
