@@ -7,6 +7,7 @@ public class GameMaster : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(Application.persistentDataPath);
         FirstRunApp.SetUp();
         eventManager = GetComponent<EventManager>();
         balance = SaveManager.Load();
