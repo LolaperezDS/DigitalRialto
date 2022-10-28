@@ -1,8 +1,9 @@
 # DigitalRialto
 A casual one-button game about currency trading. The game was conceived as a time killer on a mobile device
 
-![DR](https://user-images.githubusercontent.com/61661965/195725015-c52605e0-b317-4df3-9257-6992a0d19817.jpg)
-
+![DigitalRialto](https://user-images.githubusercontent.com/61661965/198719709-dde78e77-3c09-433f-a01f-f00d33c7cfa0.jpg)
 
 # Goal
 Listen to the news of the market and trade currencies in a plus. The game is essentially endless. The goal is to increase your balance
+
+![Screenshot_2022-10-28-22-44-03-224_com Daunt DigitalRialto](https://user-images.githubusercontent.com/61661965/198719758-f29a17f3-7f36-4a09-b89b-c797489bd80c.jpg)
