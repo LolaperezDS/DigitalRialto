@@ -3,7 +3,7 @@ using UnityEngine;
 public class EventManager : MonoBehaviour
 {
     [SerializeField] private GameObject news;
-    public int timerate = 5;
+    public int timerate = 3;
     private EventRialto e;
     public void SetUp()
     {
