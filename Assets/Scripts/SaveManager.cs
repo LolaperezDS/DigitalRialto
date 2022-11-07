@@ -4,7 +4,7 @@ using System.IO;
 public static class SaveManager
 {
     private static string filepath = Application.persistentDataPath + "/saves/";
-    // Start is called before the first frame update
+
     public static void Save(DataStruct data)
     {
         string jsonData = JsonUtility.ToJson(data, true);

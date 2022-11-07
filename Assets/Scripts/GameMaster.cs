@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
-    public DataStruct balance;
-    public EventManager eventManager;
+    private DataStruct balance;
+    private EventManager eventManager;
 
     private void Start()
     {
-        Debug.Log(Application.persistentDataPath);
         FirstRunApp.SetUp();
         eventManager = GetComponent<EventManager>();
         balance = SaveManager.Load();
@@ -33,5 +32,20 @@ public class GameMaster : MonoBehaviour
     public void ChangeCourse(float value)
     {
         balance.rublesInDollar *= value;
+    }
+
+    public bool GetIsDollar()
+    {
+        return balance.isDollar;
+    }
+
+    public float GetCount()
+    {
+        return balance.count;
+    }
+
+    public float GetCourse()
+    {
+        return balance.rublesInDollar;
     }
 }

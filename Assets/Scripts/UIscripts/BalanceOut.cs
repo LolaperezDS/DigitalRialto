@@ -7,8 +7,8 @@ public class BalanceOut : MonoBehaviour
 
     private void Update()
     {
-        string output = "Balance: " + System.Math.Round((decimal)mainObj.GetComponent<GameMaster>().balance.count, 2).ToString();
-        if (mainObj.GetComponent<GameMaster>().balance.isDollar)
+        string output = "Balance: " + System.Math.Round((decimal)mainObj.GetComponent<GameMaster>().GetCount(), 2).ToString();
+        if (mainObj.GetComponent<GameMaster>().GetIsDollar())
         {
             output += "$";
         }

@@ -7,6 +7,6 @@ public class CourseOut : MonoBehaviour
 
     void Update()
     {
-        GetComponent<Text>().text = "1$ = " + mainObj.GetComponent<GameMaster>().balance.rublesInDollar.ToString() + "R";
+        GetComponent<Text>().text = "1$ = " + mainObj.GetComponent<GameMaster>().GetCourse().ToString() + "R";
     }
 }

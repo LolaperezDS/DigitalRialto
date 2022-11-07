@@ -5,10 +5,11 @@ public class EventManager : MonoBehaviour
     [SerializeField] private GameObject news;
     public int timerate = 3;
     private EventRialto e;
+
     public void SetUp()
     {
-        e = EventList.GetrandomEventRialto();
-        news.GetComponent<NewsOut>().SetNews(e.news);
+        e = EventList.GetRandomEventRialto();
+        news.GetComponent<NewsOut>().SetNews(e.GetNewsText());
 
         Invoke(nameof(CallEventRecurse), timerate);
     }
@@ -19,7 +20,7 @@ public class EventManager : MonoBehaviour
 
         Invoke(nameof(CallEventRecurse), timerate);
 
-        e = EventList.GetrandomEventRialto();
-        news.GetComponent<NewsOut>().SetNews(e.news);
+        e = EventList.GetRandomEventRialto();
+        news.GetComponent<NewsOut>().SetNews(e.GetNewsText());
     }
 }

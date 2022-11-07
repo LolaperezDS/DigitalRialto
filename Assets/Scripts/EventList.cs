@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class EventRialto
 {
-    public string news;
-    public float lowChange;
-    public float highChange;
-    public float rate;
+    private string news;
+    private float lowChange;
+    private float highChange;
+    private float rate;
 
     public EventRialto(string news, float lowChange, float highChange, float rate)
     {
@@ -16,6 +16,16 @@ public class EventRialto
     public float GetTotalPercent()
     {
         return 1f + Random.Range(lowChange, highChange);
+    }
+
+    public string GetNewsText()
+    {
+        return news;
+    }
+
+    public float GetRate()
+    {
+        return rate;
     }
 }
 
@@ -55,21 +65,21 @@ public static class EventList
         rateModule = 0f;
         foreach (EventRialto e in events)
         {
-            rateModule += e.rate;
+            rateModule += e.GetRate();
         }
     }
 
-    public static EventRialto GetrandomEventRialto()
+    public static EventRialto GetRandomEventRialto()
     {
         float dotOfRialto = Random.Range(0f, 1f);
         float sliderRialto = 0;
         foreach (EventRialto e in events)
         {
-            if (dotOfRialto >= sliderRialto && dotOfRialto <= sliderRialto + e.rate / rateModule)
+            if (dotOfRialto >= sliderRialto && dotOfRialto <= sliderRialto + e.GetRate() / rateModule)
             {
                 return e;
             }
-            sliderRialto += e.rate / rateModule;
+            sliderRialto += e.GetRate() / rateModule;
         }
         return null;
     }
