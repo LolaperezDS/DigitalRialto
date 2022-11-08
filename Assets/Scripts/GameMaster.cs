@@ -8,6 +8,7 @@ public class GameMaster : MonoBehaviour
     private void Start()
     {
         FirstRunApp.SetUp();
+        Application.targetFrameRate = 120;
         eventManager = GetComponent<EventManager>();
         balance = SaveManager.Load();
         EventList.SetUp();
